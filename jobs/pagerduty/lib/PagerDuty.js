@@ -84,7 +84,7 @@
                 }), callback);
             },
             getAllUnresolvedIncidents: function (options, callback) {
-                this._getJsonResponse('/incidents?statuses%5B%5D=triggered&statuses%5B%5D=acknowledged', extend(options || {}, {
+                this._getJsonResponse('/incidents?statuses%5B%5D=triggered&statuses%5B%5D=acknowledged&include%5B%5D=services&include%5B%5D=assignees', extend(options || {}, {
                     'method': 'GET'
                 }), callback);
             }
