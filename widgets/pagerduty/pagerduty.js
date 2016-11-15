@@ -6,13 +6,25 @@ widget = {
       $('h2', el).text(data.title);
     }
 
-    $('.content', el).html("");
+    $('.incidents', el).empty();
 
-    $.each(data.incidents, function (i,v) {
-      var $incident = $('<div />');
-      $incident.attr('class', 'incident ' + v.status);
-      $incident.text(v.description);
-      $('.content', el).append($incident);
-    });
+    if (data.incidents.length > 0) {
+      data.incidents.forEach(function (incident) {
+        var listItem = $("<li/>")
+        listItem.addClass('incident');
+        listItem.addClass(incident.status);
+
+        var $summary = $("<div/>").addClass("incident-description").append(incident.description).appendTo(listItem);
+
+        var $incidentData = $("<div class=\"incident-data\"/>");
+        $incidentData.append($("<strong/>").addClass("incident-source").append(incident.service.summary));
+        $incidentData.append($("<strong/>").addClass("incident-assignee").append(incident.assignments[0].assignee.name));
+        listItem.append($incidentData);
+
+        $('.incidents', el).append(listItem);
+      });
+    }
+
+    $('.content', el).show();
   }
 };

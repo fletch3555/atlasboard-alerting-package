@@ -1,11 +1,22 @@
-.content
-  font-size 2em
+li.incident
+  font-size 1em
+  line-height 1.2em
+  list-style none outside none
+  padding 5px
+  border-radius 9px
+  margin-bottom 10px
+  position relative
   color white
 
-.incident
-  border-radius 0.5em
-  padding 0.5em
-  margin-bottom 0.5em
+  a
+    color inherit
+    font-style inherit
+    text-decoration none
+
+  div
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
 
   &.triggered
     background-color red
@@ -16,3 +27,35 @@
 
   &.resolved
     background-color green
+
+  .incident-assignee
+    white-space nowrap
+    text-align right
+    color #454545
+    margin-left 10px
+    text-overflow ellipsis
+    overflow hidden
+    min-width 0px
+    float right
+
+  .incident-data
+    font-size0.85em
+
+    > *
+      white-space nowrap
+
+  .incident-key
+    font-weight bold
+    padding-bottom 9px
+    white-space nowrap
+
+  .incident-source
+    white-space nowrap
+    color #404040
+    margin-left 10px
+    text-overflow ellipsis
+    overflow hidden
+    min-width 0px
+
+  .incident-summary
+    color gray
