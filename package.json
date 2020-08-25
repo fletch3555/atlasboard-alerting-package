@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "async": "0.2.6",
-    "node.extend": "~1.0.9"
+    "node.extend": "~2.0.2"
   },
   "devDependencies": {
   },
